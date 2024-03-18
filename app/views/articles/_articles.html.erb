@@ -1,0 +1,8 @@
+<ul class="container mx-auto pt-6">
+  <% articles.each do |article| %>
+    <li class="py-2 border rounded mb-3 shadow p-2">
+      <h3 class="text-lg font-semibold"><%= article.title %></h3>
+      <p class="text-gray-500"><%= article.content %></p>
+    </li>
+  <% end %>
+</ul>
