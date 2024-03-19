@@ -1,0 +1,12 @@
+<% searches.each do |search| %>
+  <div class="flex justify-between items-center border shadow rounded p-4 mb-4">
+    <span class="text-gray-700 text-lg"><%= search.query %></span>
+    <span class="border text-blue-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded">
+      <% if search.respond_to?(:count) %>
+        <%= search.count %> times
+      <% else %>
+        <%= time_ago_in_words(search.updated_at) %> ago
+      <% end %>
+    </span>
+  </div>
+<% end %>

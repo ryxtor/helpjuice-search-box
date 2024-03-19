@@ -1,14 +1,18 @@
 class ArticlesController < ApplicationController
-  def index
-    @articles = if params[:search]
-                  Article.where('title ILIKE ?', "%#{params[:search]}%")
-                else
-                  Article.all
-                end
+  before_action :process_search_query, if: -> { params[:search].present? }
 
-    respond_to do |format|
-      format.html
-      format.turbo_stream
-    end
+  def index
+    @articles = fetch_articles
+  end
+
+  private
+
+  def process_search_query
+    # Service to save the search query and avoid duplicates or similar queries
+    QueryService.new(current_user, params[:search]).generate
+  end
+
+  def fetch_articles
+    params[:search].present? ? Article.by_title(params[:search]) : Article.all.limit(20)
   end
 end

@@ -9,4 +9,7 @@ Rails.application.routes.draw do
   root 'articles#index'
 
   resources :articles, only: [:index]
+  resources :searches, only: [:index] do
+    get :search_history, on: :collection
+  end
 end
