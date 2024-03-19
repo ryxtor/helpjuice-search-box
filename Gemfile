@@ -50,6 +50,12 @@ group :development, :test do
 
   # Rspec for testing
   gem 'rspec-rails', '~> 6.1.0'
+
+  # FactoryBot for testing
+  gem 'factory_bot_rails'
+
+  # Gem for test controllers
+  gem 'rails-controller-testing'
 end
 
 group :development do
