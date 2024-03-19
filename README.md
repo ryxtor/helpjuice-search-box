@@ -27,7 +27,7 @@
 
 ### Live demo
 
-[Helpjuice Search Box](https://helpjuice-search-box.onrender.com//)
+[Helpjuice Search Box](https://helpjuice-search-box.onrender.com/)
 
 
 ### Prerequisites
