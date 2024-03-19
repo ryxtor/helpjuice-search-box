@@ -1,4 +1,6 @@
 Article.destroy_all
+Search.destroy_all
+User.destroy_all
 
 100.times do
   Article.create(
